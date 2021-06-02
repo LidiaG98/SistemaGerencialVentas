@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SGI_Philips.Data;
 
 namespace SGI_Philips.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210601232017_mesDb")]
+    partial class mesDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -219,21 +221,6 @@ namespace SGI_Philips.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("SGI_Philips.Models.CategoriaPhilips", b =>
-                {
-                    b.Property<int>("categoriaPhilipsID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("nombreCategoria")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("categoriaPhilipsID");
-
-                    b.ToTable("CategoriaPhilips");
-                });
-
             modelBuilder.Entity("SGI_Philips.Models.Mes", b =>
                 {
                     b.Property<int>("mesID")
@@ -247,21 +234,6 @@ namespace SGI_Philips.Data.Migrations
                     b.HasKey("mesID");
 
                     b.ToTable("Mes");
-                });
-
-            modelBuilder.Entity("SGI_Philips.Models.Puesto", b =>
-                {
-                    b.Property<int>("puestoID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("nombrePuesto")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("puestoID");
-
-                    b.ToTable("Puesto");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
