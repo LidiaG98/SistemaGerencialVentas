@@ -11,11 +11,14 @@ namespace SGI_Philips.Models
         public string codigoProducto { get; set; }
         public string descripcion { get; set; }
         public int stock { get; set; }
-        public float costoProducto { get; set; }
+        public float costoP { get; set; }
         public int backOrder { get; set; }
 
-        //Llave Foraneas
-        public int productoPhilipsID { get; set; }
+        //Foreign Key ------------------
+        public int  rotacionID { get; set; }
+        public Rotacion rotacion { get; set; }
+
+        //public int productoPhilipsID { get; set; }
         public ProductoPhilips ProductoPhilips { get; set; }
         
         

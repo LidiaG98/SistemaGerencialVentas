@@ -11,7 +11,7 @@ namespace SGI_Philips.Models
         public string anioProyeccion { get; set; }
         public int ventasProyeccion { get; set; }
 
-        //Llave Foranea
+        //Foreign Key -------------You Get What You Give (8) ----------------
         public int productoID { get; set; }
         public Producto Producto { get; set; }
         public int mesID { get; set; }
