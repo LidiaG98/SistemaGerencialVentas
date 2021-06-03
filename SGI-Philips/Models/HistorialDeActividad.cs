@@ -15,9 +15,9 @@ namespace SGI_Philips.Models
         //no sé para que era este atributo v:
        public DateTime fechaActualización { get; set; }
         //Foreign Key
-        public string UserId { get; set; }
-
-        //[ForeignKey("UserId")]
+        public string Id { get; set; }
+        public Usuario usuario { get; set; }
+                //[ForeignKey("UserId")]
         //public ApplicationUser ApplicationUser { get; set; }
     }
 }
