@@ -1,0 +1,46 @@
+﻿@model SGI_Philips.Models.Proyeccion
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Proyeccion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="anioProyeccion" class="control-label"></label>
+                <input asp-for="anioProyeccion" class="form-control" />
+                <span asp-validation-for="anioProyeccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ventasProyeccion" class="control-label"></label>
+                <input asp-for="ventasProyeccion" class="form-control" />
+                <span asp-validation-for="ventasProyeccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="productoID" class="control-label"></label>
+                <select asp-for="productoID" class ="form-control" asp-items="ViewBag.productoID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="mesID" class="control-label"></label>
+                <select asp-for="mesID" class ="form-control" asp-items="ViewBag.mesID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

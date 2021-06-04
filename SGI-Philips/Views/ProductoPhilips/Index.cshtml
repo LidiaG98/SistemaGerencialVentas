@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SGI_Philips.Models.ProductoPhilips>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.codigoPhillips)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcionPhillips)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoriaPhilips)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Producto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigoPhillips)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcionPhillips)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoriaPhilips.categoriaPhilipsID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.productoID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.productoPhilipsID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.productoPhilipsID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.productoPhilipsID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

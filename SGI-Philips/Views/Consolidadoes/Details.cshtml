@@ -1,0 +1,42 @@
+﻿@model SGI_Philips.Models.Consolidado
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Consolidado</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.anioConsolidado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.anioConsolidado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ventasConsolidado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ventasConsolidado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Producto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Producto.productoID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Mes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Mes.mesID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.consolidadoID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
