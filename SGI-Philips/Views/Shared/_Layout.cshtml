@@ -1,49 +1,171 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SGI_Philips</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="shortcut icon" type="image/png" href="~/assets/images/icon/favicon.ico">
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="~/assets/css/metisMenu.css">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/slicknav.min.css">
+    <link rel="stylesheet" href="~/assets/css/typography.css">
+    <link rel="stylesheet" href="~/assets/css/default-css.css">
+    <link rel="stylesheet" href="~/assets/css/styles.css">
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SGI_Philips</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- page container area start -->
+    <div class="page-container">
+        <!-- sidebar menu area start -->
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <div class="sidebar-menu">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <a asp-page="/Index"><img src="~/assets/images/icon/logo.png" alt="logo"></a>
+                    </div>
+                </div>
+                <div class="main-menu">
+                    <div class="menu-inner">
+                        <nav>
+                            <ul class="metismenu" id="menu">
+                                <li>
+                                    <a asp-page="/Index" aria-expanded="true"><i class="ti-dashboard"></i><span>Inicio</span></a>
+                                </li>
+                                <li>
+                                    <a aria-expanded="true">
+                                        <i class="ti-layout-sidebar-left"></i><span>
+                                            Productos
+                                        </span>
+                                    </a>
+                                    <ul class="collapse">
+                                        <li><a asp-area="" asp-controller="ProductoPhilips" asp-action="Index" >Producto Philips</a></li>
+                                        <li><a asp-area="" asp-controller="Productoes" asp-action="Index">Productos Varios</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Proyeccions" asp-action="Index"><i class="ti-pie-chart"></i><span>Proyección de Ventas</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" aria-expanded="true"><i class="ti-palette"></i><span>Productos más vendidos</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" aria-expanded="true"><i class="ti-slice"></i><span>Comparación de periodos</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" aria-expanded="true">
+                                        <i class="fa fa-table"></i>
+                                        <span>Cambios de Inventario</span>
+                                    </a>
+                                </li>
+                                <li><a href="maps.html"><i class="ti-map-alt"></i> <span>Ventas Netas</span></a></li>
+                                <li>
+                                    <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layers-alt"></i> <span>Prioridad de Productos</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" aria-expanded="true">
+                                        <i class="fa fa-exclamation-triangle"></i>
+                                        <span>Costos</span>
+                                    </a>
+                                </li>
+                                <li><a asp-area="" asp-controller="Puestoes" asp-action="Index"><i class="ti-map-alt"></i> <span>Puestos</span></a></li>
+                                <li><a asp-area="" asp-controller="HistorialDeActividads" asp-action="Index"><i class="ti-map-alt"></i> <span>Historial de Actividad</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - SGI_Philips - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <!-- sidebar menu area end -->
+        }
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- page title area start -->
+            <div class="page-title-area">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="breadcrumbs-area clearfix">
+                            <div class="nav-btn pull-left pr-3 m-0" id="sidebarBtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <h4 class="page-title pull-left">@ViewBag.Title</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 clearfix">
+                        <partial name="_LoginPartial" />
+                    </div>
+                </div>
+            </div>
+            <div class="p-5 m-3 main-content-inner">
+                @RenderBody()
+            </div>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- main content area end -->
+    </div>
+    <!-- page container area end -->
+
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- offset area end -->
+    <!-- jquery latest version -->
+    <script src="~/assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="~/assets/js/popper.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="~/assets/js/metisMenu.min.js"></script>
+    <script src="~/assets/js/jquery.slimscroll.min.js"></script>
+    <script src="~/assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- start chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- start highcharts js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- start zingchart js -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+        zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+    </script>
+    <!-- all line chart activation -->
+    <script src="~/assets/js/line-chart.js"></script>
+    <!-- all pie chart -->
+    <script src="~/assets/js/pie-chart.js"></script>
+    <!-- others plugins -->
+    <script src="~/assets/js/plugins.js"></script>
+    <script src="~/assets/js/scripts.js"></script>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                document.getElementById('sidebarBtn').style.display = 'block'
+            });
+        </script>
+
+    }
+    else
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                document.getElementById('sidebarBtn').click();
+                document.getElementById('sidebarBtn').style.display = 'none'
+            });
+        </script>
+    }
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>
