@@ -10,5 +10,7 @@ namespace SGI_Philips.Models
         public int puestoID { get; set; }
         public string nombrePuesto { get; set; }
 
+        // Esto es para la relacion 1 a * entre usuario y puesto
+        public ICollection<Usuario> usuario { get; set; }
     }
 }

@@ -1,0 +1,49 @@
+﻿@model SGI_Philips.Models.HistorialDeActividad
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>HistorialDeActividad</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="historialDeActividadID" class="control-label"></label>
+                <input asp-for="historialDeActividadID" class="form-control" />
+                <span asp-validation-for="historialDeActividadID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tipoActividad" class="control-label"></label>
+                <input asp-for="tipoActividad" class="form-control" />
+                <span asp-validation-for="tipoActividad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fechaCreación" class="control-label"></label>
+                <input asp-for="fechaCreación" class="form-control" />
+                <span asp-validation-for="fechaCreación" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fechaActualización" class="control-label"></label>
+                <input asp-for="fechaActualización" class="form-control" />
+                <span asp-validation-for="fechaActualización" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

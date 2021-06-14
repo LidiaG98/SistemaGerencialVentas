@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SGI_Philips.Models.HistorialDeActividad>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.historialDeActividadID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipoActividad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechaCreación)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechaActualización)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.historialDeActividadID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipoActividad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaCreación)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaActualización)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

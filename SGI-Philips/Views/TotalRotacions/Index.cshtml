@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SGI_Philips.Models.TotalRotacion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.invCosto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.invVenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pedidoCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.backOrderTotal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.invCosto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.invVenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pedidoCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.backOrderTotal)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.totalRotacionID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.totalRotacionID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.totalRotacionID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

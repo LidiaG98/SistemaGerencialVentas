@@ -1,0 +1,36 @@
+﻿@model SGI_Philips.Models.Rotacion
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Rotacion</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tipo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tipo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mesesInv)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mesesInv)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.totalRotacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.totalRotacion.totalRotacionID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.rotacionID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

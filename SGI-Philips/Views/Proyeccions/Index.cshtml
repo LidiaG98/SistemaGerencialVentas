@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SGI_Philips.Models.Proyeccion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.anioProyeccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ventasProyeccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.anioProyeccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ventasProyeccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.productoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mes.mesID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.proyeccionID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.proyeccionID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.proyeccionID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
