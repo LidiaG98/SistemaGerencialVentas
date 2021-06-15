@@ -156,5 +156,23 @@ namespace SGI_Philips.Controllers
         {
             return _context.Producto.Any(e => e.productoID == id);
         }
+
+        // GET: Productoes/masVendidos/
+        public async Task<IActionResult> MasVendidos()
+        {            
+            return View();
+        }
+
+        // GET: Productoes/masVendidos/
+        public async Task<IActionResult> ProyeccionVentas()
+        {
+            return View();
+        }
+
+        // GET: Productoes/masVendidos/
+        public async Task<IActionResult> VentasNetasRealizadas()
+        {
+            return View();
+        }
     }
 }

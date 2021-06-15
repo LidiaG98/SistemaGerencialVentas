@@ -1,0 +1,185 @@
+﻿@{
+    ViewData["Title"] = "Mas Vendidos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="shortcut icon" type="image/png" href="~/assets/images/icon/favicon.ico">
+<link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="~/assets/css/themify-icons.css">
+<link rel="stylesheet" href="~/assets/css/metisMenu.css">
+<link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="~/assets/css/slicknav.min.css">
+<!-- amcharts css -->
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<!-- Start datatable css -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+<!-- style css -->
+<link rel="stylesheet" href="~/assets/css/typography.css">
+<link rel="stylesheet" href="~/assets/css/default-css.css">
+<link rel="stylesheet" href="~/assets/css/styles.css">
+<link rel="stylesheet" href="~/assets/css/responsive.css">
+<!-- modernizr css -->
+<script src="~/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+<div class="col-12 mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="header-title">Productos Más Vendidos</h4>
+            <div class="row">
+                <div class="col-10">
+                    <form action="/" method="post">
+                        <div class="row">
+                            <div class="row col-4 align-content-center">
+                                <label class="col-3" for="fechaInicio">Inicio</label>
+                                <input class="col-7" type="date" name="fechaInicio" value="" />
+                            </div>
+                            <div class="row col-4 align-content-center">
+                                <label class="col-3" for="fechaFinal">Final</label>
+                                <input class="col-7" type="date" name="fechaFinal" value="" />
+                            </div>
+                            <button class="col-1 btn btn-sm btn-success align-content-center"><i class="ti-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-block btn-sm btn-primary"><i class="ti-printer"> Generar Reporte</i></button>
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <div class="data-tables datatable-primary">
+                <table id="dataTable2" class="text-center table-hover">
+                    <thead class="text-capitalize">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Nombre Producto</th>
+                            <th scope="col">Tipo de Rotación</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Ventas Totales</th>
+                            <th scope="col">Precio Unitario</th>                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>912400358145</td>
+                            <td>1DLG36L840-4-D-UNV-DIM</td>
+                            <td>1</td>
+                            <td>5403</td>
+                            <td>$53,539.34</td>
+                            <td>$344.78</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>911401511751</td>
+                            <td>RC100B LED37S 865 W60L60 PSU UNV G3</td>
+                            <td>2</td>
+                            <td>2384</td>
+                            <td>$51,942.42</td>
+                            <td>$100.48</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>911401724112</td>
+                            <td>RC091V LED36S/830 PSU W59L59 LA </td>
+                            <td>1</td>
+                            <td>1429</td>
+                            <td>$50,132.51</td>
+                            <td>$32.42</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>912400709051</td>
+                            <td>MF0SL84030QN04DE1BNNW</td>
+                            <td>3</td>
+                            <td>430</td>
+                            <td>$48,323.24</td>
+                            <td>$451.39</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>911401557641</td>
+                            <td>RC550B LED32S 840 L120 PSR CD LatAm TW</td>
+                            <td>1</td>
+                            <td>3293</td>
+                            <td>$48,239.49</td>
+                            <td>$177.01</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>912400539322</td>
+                            <td>C4RDLCL</td>
+                            <td>2</td>
+                            <td>2353</td>
+                            <td>$45,234.50</td>
+                            <td>$186.40</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>912400547918</td>
+                            <td>Z4RDL15840WOWHZ10U</td>
+                            <td>2</td>
+                            <td>1235</td>
+                            <td>$40,323.42</td>
+                            <td>$124.32</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>910500457952</td>
+                            <td>ST730T LED12S/830 PSED WB WH</td>
+                            <td>1</td>
+                            <td>783</td>
+                            <td>$35,756.34</td>
+                            <td>$162.00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>911401502641</td>
+                            <td>ST391T LED30/940 PSU-E NB TW</td>
+                            <td>1</td>
+                            <td>657</td>
+                            <td>$32,745.14</td>
+                            <td>$93.43</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>911401573331</td>
+                            <td>GD391B 2XLED10/940 PSU-E WB TW</td>
+                            <td>1</td>
+                            <td>243</td>
+                            <td>$27,525.65</td>
+                            <td>$100.07</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Primary table end -->
+<!-- jquery latest version -->
+<script src="~/assets/js/vendor/jquery-2.2.4.min.js"></script>
+<!-- bootstrap 4 js -->
+<script src="~/assets/js/popper.min.js"></script>
+<script src="~/assets/js/bootstrap.min.js"></script>
+<script src="~/assets/js/owl.carousel.min.js"></script>
+<script src="~/assets/js/metisMenu.min.js"></script>
+<script src="~/assets/js/jquery.slimscroll.min.js"></script>
+<script src="~/assets/js/jquery.slicknav.min.js"></script>
+
+<!-- Start datatable js -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+<!-- others plugins -->
+<script src="~/assets/js/plugins.js"></script>
+<script src="~/assets/js/scripts.js"></script>
+
+
