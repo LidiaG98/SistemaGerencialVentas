@@ -29,7 +29,7 @@ namespace SGI_Philips.Areas.Identity.Pages.Account
         {
             if (userId == null || code == null)
             {
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Account/Login");
             }
 
             var user = await _userManager.FindByIdAsync(userId);

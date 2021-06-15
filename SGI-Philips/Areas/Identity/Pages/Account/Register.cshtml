@@ -1,67 +1,111 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Registrarse";
 }
 
-<h1>@ViewData["Title"]</h1>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/themify-icons.css">
+<link rel="stylesheet" href="assets/css/metisMenu.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/css/slicknav.min.css">
+<!-- amchart css -->
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<!-- others css -->
+<link rel="stylesheet" href="assets/css/typography.css">
+<link rel="stylesheet" href="assets/css/default-css.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<!-- modernizr css -->
+<script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.ConfirmPassword"></label>
-                <input asp-for="Input.ConfirmPassword" class="form-control" />
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h4>Use another service to register.</h4>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
-                        </p>
+<div class="login-area">
+    <div class="container">
+        <div class="login-box">
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <div class="login-form-head">
+                    <h4>Registrarse</h4>
+                    <p>Llene la siguiente información, para su solicitud de cuenta</p>
+                </div>
+                <div class="login-form-body">                    
+                    <div class="form-gp">
+                        <label asp-for="Input.Nombres">Nombres</label>
+                        <input asp-for="Input.Nombres" type="text" id="exampleInputEmail1">
+                        <i class="ti-id-badge"></i>
+                        <div class="text-danger"><span asp-validation-for="Input.Nombres" class="text-danger"></span></div>
                     </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
+                    <div class="form-gp">
+                        <label asp-for="Input.Apellidos">Apellidos</label>
+                        <input asp-for="Input.Apellidos" type="text" id="exampleInputEmail1">
+                        <i class="ti-id-badge"></i>
+                        <div class="text-danger"><span asp-validation-for="Input.Apellidos" class="text-danger"></span></div>
+                    </div>
+                    <div class="form-gp">
+                        <label asp-for="Input.Dui">DUI</label>
+                        <input asp-for="Input.Dui" type="text" pattern="[0-9]{9}" maxlength="9" id="exampleInputEmail1">
+                        <i class="ti-credit-card"></i>
+                        <div class="text-danger"><span asp-validation-for="Input.Dui" class="text-danger"></span></div>
+                    </div>
+                    <div class="form-gp">
+                        <label asp-for="Input.Nit">NIT</label>
+                        <input asp-for="Input.Nit" type="text" pattern="[0-9]{14}" maxlength="14" id="exampleInputEmail1">
+                        <i class="ti-credit-card"></i>
+                        <div class="text-danger"><span asp-validation-for="Input.Nit" class="text-danger"></span></div>
+                    </div>
+                    <div class="form-gp">
+                        <label asp-for="Input.Nup">NUP</label>
+                        <input asp-for="Input.Nup" type="text" pattern="[0-9]{12}" maxlength="12" id="exampleInputEmail1">
+                        <i class="ti-credit-card"></i>
+                        <div class="text-danger"><span asp-validation-for="Input.Nup" class="text-danger"></span></div>
+                    </div>
+                    <div class="form-gp">
+                        <label asp-for="Input.Telefono">Teléfono</label>
+                        <input asp-for="Input.Telefono" type="text" pattern="[0-9]{8}" maxlength="8" id="exampleInputEmail1">
+                        <i class="ti-tablet"></i>
+                        <div class="text-danger"><span asp-validation-for="Input.Telefono" class="text-danger"></span></div>
+                    </div>
+                    <div class="form-gp">
+                        <label asp-for="Input.Email">Correo Electrónico</label>
+                        <input asp-for="Input.Email" type="email" id="exampleInputEmail1">
+                        <i class="ti-email"></i>
+                        <div class="text-danger"><span asp-validation-for="Input.Email" class="text-danger"></span></div>
+                    </div>
+                    <div class="form-gp">
+                        <label asp-for="Input.Password">Contraseña</label>
+                        <input asp-for="Input.Password" id="exampleInputPassword1">
+                        <i class="ti-lock"></i>
+                        <div class="text-danger"><span asp-validation-for="Input.Password" class="text-danger"></span></div>
+                    </div>
+                    <div class="form-gp">
+                        <label asp-for="Input.ConfirmPassword">Confirmar Contraseña</label>
+                        <input asp-for="Input.ConfirmPassword" id="exampleInputPassword1">
+                        <i class="ti-lock"></i>
+                        <div class="text-danger"><span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span></div>
+                    </div>
+                    <div class="submit-btn-area">
+                        <button id="form_submit" type="submit">Registrarme <i class="ti-arrow-right"></i></button>
+                    </div>                    
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+<!-- login area end -->
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <!-- jquery latest version -->
+    <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- others plugins -->
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/scripts.js"></script>
 }

@@ -46,6 +46,35 @@ namespace SGI_Philips.Areas.Identity.Pages.Account
 
         public class InputModel
         {
+
+            [Required]
+            [RegularExpression(@"^[0-9]{9}$", ErrorMessage = "El DUI solo tiene que llevar 9 números sin guión")]
+            [Display(Name = "DUI")]
+            public string Dui { get; set; }
+
+            [Required]
+            [RegularExpression(@"^[0-9]{8}$", ErrorMessage = "El teléfono debe llevar 8 números sin caractéres especiales")]
+            [Display(Name = "Teléfono")]
+            public string Telefono { get; set; }
+
+            [Required]
+            [RegularExpression(@"^[0-9]{12}$", ErrorMessage = "El NUP debe llevar 12 números sin caractéres especiales")]
+            [Display(Name = "Nup")]
+            public string Nup { get; set; }
+
+            [Required]
+            [RegularExpression(@"^[0-9]{14}$", ErrorMessage = "El NIT debe llevar 14 números sin caractéres especiales")]
+            [Display(Name = "NIT")]
+            public string Nit { get; set; }
+
+            [Required]            
+            [Display(Name = "Apellidos")]
+            public string Apellidos { get; set; }
+
+            [Required]            
+            [Display(Name = "Nombres")]
+            public string Nombres { get; set; }
+
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -75,7 +104,17 @@ namespace SGI_Philips.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new Usuario { UserName = Input.Email, Email = Input.Email };
+                var user = new Usuario { 
+                    UserName = Input.Email, 
+                    Email = Input.Email,
+                    nombres = Input.Nombres,
+                    apellidos = Input.Apellidos,
+                    dui = Input.Dui,
+                    nit = Input.Nit,
+                    nup = Input.Nup,
+                    telefono = Input.Telefono,
+                    EmailConfirmed = true
+                };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
