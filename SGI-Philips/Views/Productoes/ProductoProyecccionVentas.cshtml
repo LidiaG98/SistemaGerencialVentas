@@ -1,0 +1,240 @@
+﻿
+@{
+    ViewData["Title"] = "Proyección de Ventas por Producto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="shortcut icon" type="image/png" href="~/assets/images/icon/favicon.ico">
+<link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="~/assets/css/themify-icons.css">
+<link rel="stylesheet" href="~/assets/css/metisMenu.css">
+<link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="~/assets/css/slicknav.min.css">
+<!-- amcharts css -->
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<!-- Start datatable css -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+<!-- style css -->
+<link rel="stylesheet" href="~/assets/css/typography.css">
+<link rel="stylesheet" href="~/assets/css/default-css.css">
+<link rel="stylesheet" href="~/assets/css/styles.css">
+<link rel="stylesheet" href="~/assets/css/responsive.css">
+<!-- modernizr css -->
+<script src="~/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+<div class="row bg-white">
+    <div class="row text-center col-12" style="margin: 20px;">
+        <div class="row col-12">
+            <h4 class="lead col-2">Código del Producto:</h4>
+            <h4 class="lead col-4">911401561721</h4>
+        </div>
+        <div class="row col-12">
+            <h4 class="lead col-2">Nombre del Producto:</h4>
+            <h4 class="lead col-4">BY228Z Hook (Accesorio de Montaje)</h4>
+        </div>
+    </div>    
+    <div class="row col-12">
+        <div class="col-6">
+            <br />
+            <br />
+            <br />
+            <figure class="highcharts-figure justify-content-center">
+                <div id="container"></div>
+                <div class="text-center">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <h4 class="lead"><i class="ti-dropbox"></i> Stock Actual: 1394</h4>
+                    <br />
+                    <h4 class="lead"><i class="ti-layout-grid2-alt"></i> Tipo de Rotación: 2</h4>
+                    <br />
+                    <h4 class="lead"><i class="ti-money"></i> Total de Ventas: $23,946.53</h4>
+                </div>
+            </figure>
+        </div>
+        <div class="col-6">
+            <!-- table primary start -->
+            <div class="col-12">                                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="header-title text-center">Ventas Proyectadas por Mes</h4>
+                            <form action="/" class="col-6 form-check" method="post" style="margin-left:-20px;">                                
+                                <label class="col-3" for="fechaFinal">Año:</label>
+                                <input class="col-5" id="datepicker" type="number" name="fechaFinal" value="" style="margin-left:-25px;" />                                  
+                                <button class="col-2 btn btn-xs btn-primary align-content-center"><i class="ti-search"></i></button>                                                                                                 
+                            </form>
+                            <div class="single-table">
+                                <div class="table-responsive table-bordered table-hover">
+                                    <table class="table text-center">
+                                        <thead class="text-uppercase bg-primary">
+                                            <tr class="text-white">
+                                                <th scope="col">Mes</th>
+                                                <th scope="col">Venta</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Enero</th>
+                                                <td>$2345.42</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Febrero</th>
+                                                <td>$323.24</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Marzo</th>
+                                                <td>$1242.42</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Abril</th>
+                                                <td>$985.46</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Mayo</th>
+                                                <td>$4323.23</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Junio</th>
+                                                <td>$552.64</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Julio</th>
+                                                <td>$2412.54</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Agosto</th>
+                                                <td>$1232.76</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Septiembre</th>
+                                                <td>$763.36</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Octubre</th>
+                                                <td>$4321.46</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Noviembre</th>
+                                                <td>$2321.35</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Diciembre</th>
+                                                <td>$3122.65</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- table primary end -->
+            </div>
+    </div>
+</div>
+
+<!-- jquery latest version -->
+<script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+<!-- jquery latest version -->
+<script src="~/assets/js/vendor/jquery-2.2.4.min.js"></script>
+<!-- bootstrap 4 js -->
+<script src="~/assets/js/popper.min.js"></script>
+<script src="~/assets/js/bootstrap.min.js"></script>
+<script src="~/assets/js/owl.carousel.min.js"></script>
+<script src="~/assets/js/metisMenu.min.js"></script>
+<script src="~/assets/js/jquery.slimscroll.min.js"></script>
+<script src="~/assets/js/jquery.slicknav.min.js"></script>
+
+<!-- Start datatable js -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+<!-- others plugins -->
+<script src="~/assets/js/plugins.js"></script>
+<script src="~/assets/js/scripts.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script>
+    Highcharts.chart('container', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Ventas Proyectadas para BY228Z Hook (Accesorio de Montaje)'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                }
+            }
+        },
+        series: [{
+            name: 'Mes',
+            colorByPoint: true,
+            data: [{
+                name: 'Enero',
+                y: 2345.42,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'Febrero',
+                y: 323.24
+            }, {
+                name: 'Marzo',
+                y: 1242.42
+            }, {
+                name: 'Abril',
+                y: 985.46
+            }, {
+                name: 'Mayo',
+                y: 4323.23
+            }, {
+                name: 'Junio',
+                y: 552.64
+            }, {
+                name: 'Julio',
+                y: 2412.54
+            }, {
+                name: 'Agosto',
+                y: 1232.76
+            }, {
+                name: 'Septiempre',
+                y: 763.36
+            }, {
+                name: 'Octubre',
+                y: 4321.46
+            }, {
+                name: 'Noviembre',
+                y: 2321.35
+            }, {
+                name: 'Diciembre',
+                y: 3122.65
+            }]
+        }]
+    });
+</script>

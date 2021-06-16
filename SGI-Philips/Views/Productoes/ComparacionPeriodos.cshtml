@@ -1,0 +1,278 @@
+﻿@{
+    ViewData["Title"] = "Comparacion Entre Períodos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="shortcut icon" type="image/png" href="~/assets/images/icon/favicon.ico">
+<link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="~/assets/css/themify-icons.css">
+<link rel="stylesheet" href="~/assets/css/metisMenu.css">
+<link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="~/assets/css/slicknav.min.css">
+<!-- amcharts css -->
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<!-- Start datatable css -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+<!-- style css -->
+<link rel="stylesheet" href="~/assets/css/typography.css">
+<link rel="stylesheet" href="~/assets/css/default-css.css">
+<link rel="stylesheet" href="~/assets/css/styles.css">
+<link rel="stylesheet" href="~/assets/css/responsive.css">
+<!-- modernizr css -->
+<script src="~/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <table id="datatable" hidden>
+        <thead class="text-capitalize">
+            <tr>                                
+                <th scope="col">Nombre Producto</th>
+                <th scope="col">Venta Periodo 1</th>
+                <th scope="col">Venta Periodo 2</th>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>                                
+                <td>1DLG36L840-4-D-UNV-DIM</td>
+                <td>5353.34</td>
+                <td>3443.78</td>                
+            </tr>
+            <tr>                                
+                <td>RC100B LED37S 865 W60L60 PSU UNV G3</td>
+                <td>2192.42</td>
+                <td>4005.48</td>                
+            </tr>
+            <tr>                
+                <td>RC091V LED36S/830 PSU W59L59 LA </td>
+                <td>2032.51</td>
+                <td>3232.42</td>                
+            </tr>
+            <tr>                
+                <td>MF0SL84030QN04DE1BNNW</td>
+                <td>4823.24</td>
+                <td>4512.39</td>                
+            </tr>
+            <tr>                
+                <td>RC550B LED32S 840 L120 PSR CD LatAm TW</td>
+                <td>2239.49</td>
+                <td>2377.01</td>                
+            </tr>
+            <tr>                
+                <td>C4RDLCL</td>
+                <td>4534.50</td>
+                <td>5186.40</td>                
+            </tr>
+            <tr>                
+                <td>Z4RDL15840WOWHZ10U</td>
+                <td>4023.42</td>
+                <td>4124.32</td>                
+            </tr>
+            <tr>                
+                <td>ST730T LED12S/830 PSED WB WH</td>
+                <td>3556.34</td>
+                <td>4162.00</td>                
+            </tr>
+            <tr>                
+                <td>ST391T LED30/940 PSU-E NB TW</td>
+                <td>3245.14</td>
+                <td>2293.43</td>                
+            </tr>
+            <tr>                
+                <td>GD391B 2XLED10/940 PSU-E WB TW</td>
+                <td>2725.65</td>
+                <td>3100.07</td>                
+            </tr>
+        </tbody>
+    </table>
+</figure>
+
+<div class="col-12 mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="header-title">Productos y Ventas</h4>
+            <div class="row">
+                <div class="col-10">
+                    <form action="/" method="post">
+                        <div class="row">
+                            <div class="row col-3 align-content-center">
+                                <label class="col-6" for="fechaInicio">Periodo Inicial:</label>
+                                <select>
+                                    <option value="1">1</option>
+                                    <option value="1">2</option>
+                                    <option value="1">3</option>
+                                    <option value="1">4</option>
+                                </select>
+                            </div>
+                            <div class="row col-3 align-content-center">
+                                <label class="col-6" for="fechaInicio">Periodo Final:</label>
+                                <select>
+                                    <option value="1">1</option>
+                                    <option value="1">2</option>
+                                    <option value="1">3</option>
+                                    <option value="1">4</option>
+                                </select>
+                            </div>
+                            <button class="col-1 btn btn-sm btn-success align-content-center"><i class="ti-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-block btn-sm btn-primary"><i class="ti-printer"> Generar Reporte</i></button>
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <div class="data-tables datatable-primary">
+                <table id="dataTable2" class="text-center table-hover">
+                    <thead class="text-capitalize">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Nombre Producto</th>
+                            <th scope="col">Venta Periodo 1</th>
+                            <th scope="col">Venta Periodo 2</th>
+                            <th scope="col">Diferencia Periodos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>912400358145</td>
+                            <td>1DLG36L840-4-D-UNV-DIM</td>
+                            <td>$5353.34</td>
+                            <td>$3443.78</td>
+                            <td>$1909.56</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>911401511751</td>
+                            <td>RC100B LED37S 865 W60L60 PSU UNV G3</td>
+                            <td>$2192.42</td>
+                            <td>$4005.48</td>
+                            <td>- $1183.06</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>911401724112</td>
+                            <td>RC091V LED36S/830 PSU W59L59 LA </td>
+                            <td>$2032.51</td>
+                            <td>$3232.42</td>
+                            <td>- $1199.91</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>912400709051</td>
+                            <td>MF0SL84030QN04DE1BNNW</td>
+                            <td>$4823.24</td>
+                            <td>$4512.39</td>
+                            <td>$310.85</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>911401557641</td>
+                            <td>RC550B LED32S 840 L120 PSR CD LatAm TW</td>
+                            <td>$2239.49</td>
+                            <td>$2377.01</td>
+                            <td>- $137.52</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>912400539322</td>
+                            <td>C4RDLCL</td>
+                            <td>$4534.50</td>
+                            <td>$5186.40</td>
+                            <td>- $651.90</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>912400547918</td>
+                            <td>Z4RDL15840WOWHZ10U</td>
+                            <td>$4023.42</td>
+                            <td>$4124.32</td>
+                            <td>- $100.90</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>910500457952</td>
+                            <td>ST730T LED12S/830 PSED WB WH</td>
+                            <td>$3556.34</td>
+                            <td>$4162.00</td>
+                            <td>- $605.66</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>911401502641</td>
+                            <td>ST391T LED30/940 PSU-E NB TW</td>
+                            <td>$3245.14</td>
+                            <td>$2293.43</td>
+                            <td>$951.71</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>911401573331</td>
+                            <td>GD391B 2XLED10/940 PSU-E WB TW</td>
+                            <td>$2725.65</td>
+                            <td>$3100.07</td>
+                            <td>- $374.42</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Primary table end -->
+<!-- jquery latest version -->
+<script src="~/assets/js/vendor/jquery-2.2.4.min.js"></script>
+<!-- bootstrap 4 js -->
+<script src="~/assets/js/popper.min.js"></script>
+<script src="~/assets/js/bootstrap.min.js"></script>
+<script src="~/assets/js/owl.carousel.min.js"></script>
+<script src="~/assets/js/metisMenu.min.js"></script>
+<script src="~/assets/js/jquery.slimscroll.min.js"></script>
+<script src="~/assets/js/jquery.slicknav.min.js"></script>
+
+<!-- Start datatable js -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+<!-- others plugins -->
+<script src="~/assets/js/plugins.js"></script>
+<script src="~/assets/js/scripts.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script>
+    Highcharts.chart('container', {
+        data: {
+            table: 'datatable'
+        },
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Comparación entre Períodos'
+        },
+        yAxis: {
+            allowDecimals: true,
+            title: {
+                text: 'Dolares ($)'
+            }
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name + '</b><br/>' +
+                    this.point.y + ' ' + this.point.name.toLowerCase();
+            }
+        }
+    });
+</script>

@@ -174,5 +174,17 @@ namespace SGI_Philips.Controllers
         {
             return View();
         }
+
+        // GET: Productoes/masVendidos/
+        public async Task<IActionResult> ProductoProyecccionVentas()
+        {
+            return View();
+        }
+
+        // GET: Productoes/masVendidos/
+        public async Task<IActionResult> ComparacionPeriodos()
+        {
+            return View();
+        }
     }
 }
